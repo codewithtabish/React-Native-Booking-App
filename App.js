@@ -2,9 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import tw from 'twrnc';
 import Navigation from './Navigation';
+import { ModalPortal } from 'react-native-modals';
+import ToastManager from 'toastify-react-native';
+import { Provider } from 'react-redux';
+import { store } from './store/Store';
 export default function App() {
   return (
+    <>
+    <Provider store={store}>
+
     <Navigation/>
+    <ToastManager/>
+    <ModalPortal/>
+    </Provider>
+
+
+
+
+
+    </>
 
   );
 }
